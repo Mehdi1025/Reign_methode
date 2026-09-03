@@ -1,10 +1,6 @@
-import type { Metadata } from "next";
+import { loadFramerHtml } from "@/lib/framer";
 
-export const metadata: Metadata = {
-  title: "Imene Reign",
-  description:
-    "Implantez-vous et investissez à Dubaï avec stratégie. Imène Reign vous guide avec expertise terrain et vision long terme.",
-};
+const { headHtml } = loadFramerHtml();
 
 export default function RootLayout({
   children,
@@ -12,8 +8,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" dir="ltr">
-      <body>{children}</body>
+    <html lang="fr" dir="ltr" suppressHydrationWarning>
+      <head suppressHydrationWarning dangerouslySetInnerHTML={{ __html: headHtml }} />
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

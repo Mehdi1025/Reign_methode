@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/post-export.mjs",
+    "build": "next build",
+    "build:static": "next build && node scripts/post-export.mjs",
     "start": "next start",
     "lint": "next lint"
   },
