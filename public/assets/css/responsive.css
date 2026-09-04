@@ -1,0 +1,395 @@
+/* Imene Reign — responsive overrides for Framer export */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#main,
+[data-framer-root] {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* ─── Mobile (≤809px) ─── */
+@media (max-width: 809.98px) {
+  :root {
+    --mobile-layout-offset: 782px;
+  }
+
+  [data-framer-root].framer-zjmsU,
+  [data-framer-root].framer-zjmsU.framer-72rtr7,
+  [data-framer-root].framer-zjmsU.framer-6y9891 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Fix hero + nav positioned off-screen in Framer export */
+  #main .framer-vrf80x-container,
+  #main [data-framer-name="Hero"],
+  #main .framer-3lwy2 {
+    transform: translateY(var(--mobile-layout-offset, 782px)) !important;
+  }
+
+  #main .framer-vrf80x-container {
+    position: relative !important;
+    z-index: 50 !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    margin-inline: auto !important;
+  }
+
+  #main .framer-9wdoet {
+    transform: translateY(calc(var(--mobile-layout-offset, 782px) - 40px)) !important;
+  }
+
+  #main .framer-zjmsU .framer-1htuy4k,
+  #main .framer-zjmsU .framer-xh47sf,
+  #main .framer-zjmsU .framer-gxmibw,
+  #main .framer-zjmsU .framer-31cfym-container,
+  #main .framer-zjmsU .framer-1sf9uvp,
+  #main .framer-zjmsU .framer-10e9rh-container,
+  #main .framer-zjmsU .framer-1mway9h,
+  #main .framer-zjmsU .framer-thi9ge,
+  #main .framer-zjmsU .framer-dqvjwx,
+  #main .framer-zjmsU .framer-jv0o,
+  #main .framer-zjmsU .framer-gcxn0w,
+  #main .framer-zjmsU .framer-1f1k1i5,
+  #main .framer-zjmsU .framer-10na8b8-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #main .framer-zjmsU .framer-jv0o {
+    width: 100% !important;
+  }
+
+  #main .framer-zjmsU .framer-gxmibw {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  #main .framer-zjmsU .framer-xh47sf,
+  #main .framer-zjmsU .framer-1sf9uvp,
+  #main .framer-zjmsU .framer-10e9rh-container,
+  #main [data-framer-name="Pricing"],
+  #main [data-framer-name="Rooms"],
+  #main [data-framer-name="Timetable"],
+  #main [data-framer-name="Gallery"] {
+    overflow-x: clip !important;
+  }
+
+  /* Hero typography */
+  #main [data-framer-name="Headline"] h1.framer-text,
+  #main [data-framer-name="Top"] h1.framer-text,
+  #main [data-framer-name="Hero"] h1.framer-text {
+    font-size: clamp(1.85rem, 8.5vw, 3.2rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.02em !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100% !important;
+  }
+
+  #main [data-framer-name="Headline"] h1.framer-text:last-child,
+  #main [data-framer-name="Hero"] h1.framer-text + h1.framer-text,
+  #main [data-framer-name="Top"] h1.framer-text + h1.framer-text {
+    font-size: clamp(2rem, 9.5vw, 3.6rem) !important;
+    white-space: normal !important;
+  }
+
+  /* Section headings */
+  #main h2.framer-text {
+    font-size: clamp(1.6rem, 6.5vw, 3rem) !important;
+    line-height: 1.05 !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  #main h3.framer-text {
+    font-size: clamp(1.25rem, 5vw, 2.2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  #main h4.framer-text {
+    font-size: clamp(1rem, 4vw, 1.6rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Body copy — keep readable */
+  #main [data-framer-name="Bottom"] p.framer-text,
+  #main [data-framer-name="Content"] p.framer-text,
+  #main [data-framer-name="List"] p.framer-text,
+  #main [data-framer-name="Feature"] p.framer-text,
+  #main [data-framer-name="File"] p.framer-text {
+    font-size: clamp(0.875rem, 3.6vw, 1.05rem) !important;
+    line-height: 1.45 !important;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Large display text */
+  #main [data-framer-name="Pricing"] h2.framer-text,
+  #main [data-framer-name="Pricing"] p.framer-text:first-of-type,
+  #main [data-framer-name="Headline"] h2.framer-text {
+    font-size: clamp(1.75rem, 8vw, 4rem) !important;
+    line-height: 1 !important;
+  }
+
+  #main [data-framer-name="Pricing"] p.framer-text {
+    font-size: clamp(2rem, 12vw, 5rem) !important;
+    line-height: 1 !important;
+  }
+
+  /* FAQ */
+  #main [data-framer-name="Phone"] h2.framer-text {
+    font-size: clamp(1.5rem, 7vw, 3rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Bonus emojis */
+  #main [data-framer-name="Timetable"] p.framer-text,
+  #main [data-framer-name="Phone"] > p.framer-text {
+    font-size: clamp(1.75rem, 8vw, 3rem) !important;
+  }
+
+  /* Partners marquee */
+  #main [data-framer-name="Gallery"],
+  #main [data-framer-name^="Image"] {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+
+  #main .framer-1b82n8v,
+  #main .framer-b47899,
+  #main .framer-8kzuh8,
+  #main .framer-z7ihfr,
+  #main .framer-uunvsx,
+  #main .framer-bnxy7d,
+  #main .framer-1wg0url,
+  #main .framer-qzsjvd,
+  #main .framer-tuj6d4,
+  #main .framer-1mwsjnr,
+  #main .framer-sj9ajn,
+  #main .framer-1drbqx6,
+  #main .framer-1jfu311,
+  #main .framer-9wdoet,
+  #main .framer-cmem87 {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Navigation */
+  #main nav.framer-s9oXE {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 14px 12px !important;
+  }
+
+  #main nav.framer-s9oXE .framer-1i8q9kc {
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  #main nav.framer-s9oXE .framer-1rrdilf {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  #main nav.framer-s9oXE a,
+  #main nav.framer-s9oXE p,
+  #main nav.framer-s9oXE .framer-text {
+    font-size: clamp(0.65rem, 2.8vw, 0.8rem) !important;
+  }
+
+  /* CTA buttons */
+  #main a[data-framer-name="Button"] p,
+  #main a[data-framer-name="Button"] .framer-text,
+  #main .framer-PcQVM p {
+    font-size: clamp(0.78rem, 3.2vw, 0.95rem) !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  /* Content blocks */
+  #main [data-framer-name="Content"],
+  #main [data-framer-name="Left"],
+  #main [data-framer-name="List"],
+  #main .framer-1jt51hs,
+  #main .framer-uwvic7,
+  #main .framer-15jqjqf {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #main .framer-l4ura1,
+  #main .framer-1y99ram,
+  #main .framer-1mcpg33,
+  #main .framer-v5lqoa,
+  #main .framer-fie8i5,
+  #main .framer-1ns0lwq,
+  #main .framer-tbkiw4,
+  #main .framer-1atdwbo,
+  #main [data-framer-name="Card 01"],
+  #main [data-framer-name="Mobile 01"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #main video {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  /* Quote animation section */
+  #main .framer-thi9ge {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #main .framer-thi9ge .framer-text {
+    font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+  }
+}
+
+/* ─── Small phones (≤374px) ─── */
+@media (max-width: 374.98px) {
+  #main [data-framer-name="Hero"] h1.framer-text {
+    font-size: clamp(1.75rem, 8.5vw, 2.4rem) !important;
+  }
+
+  #main h2.framer-text {
+    font-size: clamp(1.35rem, 6vw, 2rem) !important;
+  }
+
+  #main nav.framer-s9oXE {
+    padding: 10px 8px !important;
+  }
+
+  #main nav.framer-s9oXE a,
+  #main nav.framer-s9oXE p,
+  #main nav.framer-s9oXE .framer-text {
+    font-size: 0.62rem !important;
+  }
+
+  #main .framer-gxmibw {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* ─── Tablet (810px–1199px) ─── */
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  html,
+  body,
+  #main,
+  [data-framer-root] {
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  [data-framer-root].framer-zjmsU {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #main h1.framer-text {
+    font-size: clamp(3rem, 7vw, 5.5rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  #main h2.framer-text {
+    font-size: clamp(2rem, 4.5vw, 3.5rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  #main nav.framer-s9oXE {
+    width: calc(100% - 48px) !important;
+    max-width: 960px;
+    margin-inline: auto;
+  }
+
+  #main [data-framer-name^="Image"],
+  #main [data-framer-name="Gallery"] {
+    overflow: hidden !important;
+  }
+
+  #main .framer-jv0o {
+    width: 100% !important;
+  }
+}
+
+/* ─── Desktop (≥1200px) ─── */
+@media (min-width: 1200px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  [data-framer-root].framer-zjmsU {
+    margin-inline: auto;
+  }
+
+  #main [data-framer-name^="Image"],
+  #main [data-framer-name="Gallery"] {
+    overflow: hidden !important;
+  }
+}
+
+/* ─── Landscape mobile ─── */
+@media (max-width: 809.98px) and (orientation: landscape) {
+  :root {
+    --mobile-layout-offset: 620px;
+  }
+
+  #main [data-framer-name="Hero"] h1.framer-text {
+    font-size: clamp(1.5rem, 6vh, 2.5rem) !important;
+  }
+
+  #main nav.framer-s9oXE {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
+
+@supports (padding: max(0px)) {
+  #main nav.framer-s9oXE {
+    padding-left: max(12px, env(safe-area-inset-left)) !important;
+    padding-right: max(12px, env(safe-area-inset-right)) !important;
+  }
+
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
