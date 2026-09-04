@@ -1,0 +1,53 @@
+/* Fix navbar mobile décalée — Framer utilise width:390px fixe */
+@media (max-width: 809.98px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #main,
+  [data-framer-root] {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+  }
+
+  .framer-vrf80x-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+
+  nav.framer-s9oXE {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+    box-sizing: border-box !important;
+  }
+
+  nav.framer-s9oXE .framer-1i8q9kc,
+  nav.framer-s9oXE .framer-1rrdilf,
+  nav.framer-s9oXE .framer-vlgkks-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  nav.framer-xE6zn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  nav.framer-xE6zn .framer-1wfkwfh {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
