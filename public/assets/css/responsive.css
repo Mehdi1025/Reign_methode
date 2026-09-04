@@ -1,4 +1,4 @@
-/* Imene Reign — responsive overrides for Framer export */
+/* Imene Reign — mobile-first responsive overrides for Framer export */
 
 *,
 *::before,
@@ -27,15 +27,20 @@ body {
 
 img,
 video,
-iframe {
+iframe,
+svg {
   max-width: 100%;
+  height: auto;
 }
 
 /* ─── Mobile (≤809px) ─── */
 @media (max-width: 809.98px) {
-  [data-framer-root].framer-zjmsU,
-  [data-framer-root].framer-zjmsU.framer-72rtr7,
-  [data-framer-root].framer-zjmsU.framer-6y9891 {
+  :root {
+    --gutter: 16px;
+    --section-max: calc(100vw - var(--gutter) * 2);
+  }
+
+  [data-framer-root].framer-zjmsU {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -43,7 +48,7 @@ iframe {
     min-height: 100vh !important;
   }
 
-  /* Convert absolute desktop canvas into a vertical document flow */
+  /* ── 1. Flex column layout (replaces absolute desktop canvas) ── */
   #main .framer-1htuy4k,
   #main [data-framer-name="Landing 05"] {
     display: flex !important;
@@ -56,14 +61,12 @@ iframe {
     gap: 0 !important;
   }
 
-  /* SSR breakpoint wrappers become transparent to flex layout */
   #main [data-framer-name="Landing 05"] > .ssr-variant {
     display: contents !important;
   }
 
-  /* Reset every top-level block to normal flow */
-  #main [data-framer-name="Landing 05"] > *,
-  #main [data-framer-name="Landing 05"] > .ssr-variant > * {
+  #main [data-framer-name="Landing 05"] > *:not(.framer-vrf80x-container),
+  #main [data-framer-name="Landing 05"] > .ssr-variant > *:not(.framer-vrf80x-container) {
     position: relative !important;
     top: auto !important;
     left: auto !important;
@@ -75,420 +78,25 @@ iframe {
     max-width: 100% !important;
     min-width: 0 !important;
     flex-shrink: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 
-  /* Navigation — sticky at top */
+  /* ── 2. Navigation (sticky pill — keep compact) ── */
   #main .framer-vrf80x-container {
     order: -100 !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 200 !important;
-    width: calc(100% - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
+    width: calc(100% - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
     margin: 8px auto 0 !important;
+    padding: 0 !important;
     flex-shrink: 0 !important;
   }
 
-  /* Hero section */
-  #main [data-framer-name="Hero"],
-  #main .framer-3lwy2 {
-    order: -90 !important;
-    min-height: auto !important;
-    padding-top: 0 !important;
-    overflow: hidden !important;
-  }
-
-  #main .framer-9wdoet {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 28px 16px !important;
-    min-height: 180px !important;
-    height: auto !important;
-    overflow: visible !important;
-    max-width: 100% !important;
-    text-align: center !important;
-  }
-
-  #main .framer-9wdoet * {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: auto !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  #main .framer-thi9ge {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 28px !important;
-    overflow: visible !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 24px 16px !important;
-  }
-
-  #main .framer-thi9ge > .ssr-variant,
-  #main .framer-thi9ge > .framer-7b0d7d,
-  #main .framer-thi9ge > .framer-16g8ail {
-    display: flex !important;
-    flex-direction: column !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-  }
-
-  #main .framer-thi9ge .framer-1xk1r23,
-  #main .framer-thi9ge [data-framer-name="List"],
-  #main .framer-thi9ge [data-framer-name="Content"],
-  #main .framer-thi9ge [data-framer-name="Left"],
-  #main .framer-thi9ge [data-framer-name="Card 01"],
-  #main .framer-thi9ge [data-framer-name="Mobile 01"],
-  #main .framer-thi9ge .framer-7qfo79,
-  #main .framer-thi9ge .framer-16nm2hh-container,
-  #main .framer-thi9ge .framer-7b0d7d > *,
-  #main .framer-thi9ge .framer-16g8ail > * {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Profile cards — fit viewport, no clipping */
-  #main .framer-thi9ge .framer-7b0d7d,
-  #main .framer-thi9ge .framer-16g8ail {
-    width: 100% !important;
-    max-width: calc(100vw - 32px) !important;
-    margin-inline: auto !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-
-  #main .framer-thi9ge [data-framer-name="Content"],
-  #main .framer-thi9ge [data-framer-name="List"],
-  #main .framer-thi9ge [data-framer-name="Feature"],
-  #main .framer-thi9ge [data-framer-name="Card 01"],
-  #main .framer-thi9ge [data-framer-name="Mobile 01"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-
-  #main .framer-thi9ge [data-framer-name="Feature"] p,
-  #main .framer-thi9ge [data-framer-name="Feature"] .framer-text,
-  #main .framer-thi9ge [data-framer-name="List"] p,
-  #main .framer-thi9ge [data-framer-name="List"] .framer-text {
-    width: 100% !important;
-    max-width: 100% !important;
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-  }
-
-  #main .framer-thi9ge a[data-framer-name="Button"],
-  #main .framer-thi9ge .framer-PcQVM,
-  #main .framer-thi9ge [data-framer-name="Variant 1"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-top: 20px !important;
-    margin-bottom: 12px !important;
-    display: flex !important;
-    box-sizing: border-box !important;
-  }
-
-  #main .framer-thi9ge svg {
-    max-width: 100% !important;
-  }
-
-  #main .framer-thi9ge [data-framer-name="Suffix Icon"],
-  #main [data-framer-name="Feature"] [data-framer-name="Suffix Icon"] {
-    width: auto !important;
-    max-width: 24px !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* FAQ accordion cards */
-  #main [data-framer-name="Phone"],
-  #main .framer-10e9rh-container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  #main [data-framer-name="Phone"] [data-framer-name="Content"],
-  #main [data-framer-name="Phone"] [data-framer-name="Wrap"],
-  #main [data-framer-name="Phone"] [data-framer-name="Card"],
-  #main [data-framer-name="Phone"] [data-framer-name="Medium Pill"] {
-    width: 100% !important;
-    max-width: calc(100vw - 32px) !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Timetable / 5 modules section */
-  #main [data-framer-name="Timetable"],
-  #main .framer-gxmibw {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-
-  #main [data-framer-name="Timetable"] > *,
-  #main .framer-gxmibw > *,
-  #main [data-framer-name="Timetable"] .ssr-variant > * {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-  }
-
-  #main [data-framer-name="Timetable"] [data-framer-name="Date"],
-  #main .framer-110nzqo,
-  #main .framer-1a5imib-container,
-  #main .framer-i3p4ta,
-  #main .framer-3ae0jh,
-  #main .framer-1izj0vc,
-  #main [data-framer-name="Timetable"] [data-framer-name="Content"],
-  #main [data-framer-name="Timetable"] [data-framer-name="Card"],
-  #main .framer-l4ura1,
-  #main .framer-1y99ram {
-    width: 100% !important;
-    max-width: calc(100vw - 32px) !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  #main [data-framer-name="Timetable"] a[data-framer-name="Button"],
-  #main [data-framer-name="Timetable"] .framer-PcQVM,
-  #main [data-framer-name="Timetable"] .framer-cF4iG,
-  #main .framer-1a5imib-container a {
-    width: 100% !important;
-    max-width: calc(100vw - 32px) !important;
-    margin-inline: auto !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-  }
-
-  #main [data-framer-name="Timetable"] [data-framer-name="Date"],
-  #main .framer-110nzqo {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  /* Rooms + other card sections */
-  #main [data-framer-name="Rooms"],
-  #main .framer-xh47sf {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  #main [data-framer-name="Rooms"] [data-framer-name="Content"],
-  #main [data-framer-name="Rooms"] [data-framer-name="Card"],
-  #main [data-framer-name="Rooms"] [data-framer-name="Card 01"],
-  #main [data-framer-name="Rooms"] [data-framer-name="Card 02"],
-  #main [data-framer-name="Rooms"] [data-framer-name="Card 03"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* FAQ block — was absolutely positioned in desktop export */
-  #main [data-framer-name="Phone"],
-  #main .framer-10e9rh-container,
-  #main .framer-dqvjwx {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    height: auto !important;
-    width: 100% !important;
-    overflow: visible !important;
-  }
-
-  #main [data-framer-name="Phone"] [data-framer-name="Wrap"],
-  #main [data-framer-name="Phone"] [data-framer-name="Content"],
-  #main [data-framer-name="Phone"] [data-framer-name="Card"] {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100% !important;
-  }
-
-  /* Section containers */
-  #main .framer-zjmsU .framer-1htuy4k,
-  #main .framer-zjmsU .framer-xh47sf,
-  #main .framer-zjmsU .framer-gxmibw,
-  #main .framer-zjmsU .framer-31cfym-container,
-  #main .framer-zjmsU .framer-1sf9uvp,
-  #main .framer-zjmsU .framer-10e9rh-container,
-  #main .framer-zjmsU .framer-1mway9h,
-  #main .framer-zjmsU .framer-thi9ge,
-  #main .framer-zjmsU .framer-dqvjwx,
-  #main .framer-zjmsU .framer-jv0o,
-  #main .framer-zjmsU .framer-gcxn0w,
-  #main .framer-zjmsU .framer-1f1k1i5,
-  #main .framer-zjmsU .framer-10na8b8-container,
-  #main .framer-zjmsU .framer-cmem87,
-  #main .framer-zjmsU .framer-sgtabz {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  #main .framer-zjmsU .framer-jv0o {
-    width: 100% !important;
-  }
-
-  #main .framer-zjmsU .framer-gxmibw {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  #main .framer-zjmsU .framer-xh47sf,
-  #main .framer-zjmsU .framer-1sf9uvp,
-  #main .framer-zjmsU .framer-10e9rh-container,
-  #main [data-framer-name="Pricing"],
-  #main [data-framer-name="Rooms"],
-  #main [data-framer-name="Timetable"],
-  #main [data-framer-name="Gallery"],
-  #main [data-framer-name="CTA"] {
-    overflow-x: clip !important;
-  }
-
-  /* Hero typography */
-  #main [data-framer-name="Headline"] h1.framer-text,
-  #main [data-framer-name="Top"] h1.framer-text,
-  #main [data-framer-name="Hero"] h1.framer-text {
-    font-size: clamp(1.85rem, 8.5vw, 3.2rem) !important;
-    line-height: 0.92 !important;
-    letter-spacing: -0.02em !important;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-    max-width: 100% !important;
-  }
-
-  #main [data-framer-name="Headline"] h1.framer-text:last-child,
-  #main [data-framer-name="Hero"] h1.framer-text + h1.framer-text,
-  #main [data-framer-name="Top"] h1.framer-text + h1.framer-text {
-    font-size: clamp(2rem, 9.5vw, 3.6rem) !important;
-    white-space: normal !important;
-  }
-
-  /* Section headings */
-  #main h2.framer-text {
-    font-size: clamp(1.6rem, 6.5vw, 3rem) !important;
-    line-height: 1.05 !important;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-  }
-
-  #main h3.framer-text {
-    font-size: clamp(1.25rem, 5vw, 2.2rem) !important;
-    line-height: 1.1 !important;
-  }
-
-  #main h4.framer-text {
-    font-size: clamp(1rem, 4vw, 1.6rem) !important;
-    line-height: 1.15 !important;
-  }
-
-  /* Body copy */
-  #main [data-framer-name="Bottom"] p.framer-text,
-  #main [data-framer-name="Content"] p.framer-text,
-  #main [data-framer-name="List"] p.framer-text,
-  #main [data-framer-name="Feature"] p.framer-text,
-  #main [data-framer-name="File"] p.framer-text {
-    font-size: clamp(0.875rem, 3.6vw, 1.05rem) !important;
-    line-height: 1.45 !important;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  /* Large display text */
-  #main [data-framer-name="Pricing"] h2.framer-text,
-  #main [data-framer-name="Pricing"] p.framer-text:first-of-type,
-  #main [data-framer-name="Headline"] h2.framer-text {
-    font-size: clamp(1.75rem, 8vw, 4rem) !important;
-    line-height: 1 !important;
-  }
-
-  #main [data-framer-name="Pricing"] p.framer-text {
-    font-size: clamp(2rem, 12vw, 5rem) !important;
-    line-height: 1 !important;
-  }
-
-  /* FAQ */
-  #main [data-framer-name="Phone"] h2.framer-text {
-    font-size: clamp(1.5rem, 7vw, 3rem) !important;
-    line-height: 1.05 !important;
-  }
-
-  /* Bonus emojis */
-  #main [data-framer-name="Timetable"] p.framer-text,
-  #main [data-framer-name="Phone"] > p.framer-text {
-    font-size: clamp(1.75rem, 8vw, 3rem) !important;
-  }
-
-  /* Partners marquee */
-  #main [data-framer-name="Gallery"],
-  #main [data-framer-name^="Image"] {
-    overflow: hidden !important;
-    max-width: 100% !important;
-  }
-
-  #main .framer-1b82n8v,
-  #main .framer-b47899,
-  #main .framer-8kzuh8,
-  #main .framer-z7ihfr,
-  #main .framer-uunvsx,
-  #main .framer-bnxy7d,
-  #main .framer-1wg0url,
-  #main .framer-qzsjvd,
-  #main .framer-tuj6d4,
-  #main .framer-1mwsjnr,
-  #main .framer-sj9ajn,
-  #main .framer-1drbqx6,
-  #main .framer-1jfu311,
-  #main .framer-9wdoet,
-  #main .framer-cmem87 {
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  /* Navigation */
   #main nav.framer-s9oXE {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 14px 12px !important;
+    padding: 12px 14px !important;
   }
 
   #main nav.framer-s9oXE .framer-1i8q9kc {
@@ -503,57 +111,329 @@ iframe {
     min-width: 0 !important;
   }
 
+  /* Nav CTA stays compact — override global button rules */
+  #main nav.framer-s9oXE a,
+  #main nav.framer-s9oXE a[data-framer-name="Button"],
+  #main nav.framer-s9oXE .framer-PcQVM,
+  #main nav.framer-s9oXE .framer-cF4iG {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
   #main nav.framer-s9oXE a,
   #main nav.framer-s9oXE p,
   #main nav.framer-s9oXE .framer-text {
-    font-size: clamp(0.65rem, 2.8vw, 0.8rem) !important;
+    font-size: clamp(0.62rem, 2.8vw, 0.8rem) !important;
+    white-space: nowrap !important;
   }
 
-  /* CTA buttons */
-  #main a[data-framer-name="Button"],
-  #main .framer-PcQVM,
-  #main .framer-cF4iG[data-framer-name="Variant 1"] {
+  /* ── 3. Hero ── */
+  #main [data-framer-name="Hero"],
+  #main .framer-3lwy2 {
+    order: -90 !important;
+    overflow: hidden !important;
+    padding-inline: var(--gutter) !important;
+  }
+
+  #main [data-framer-name="Hero"] [data-framer-name="Content"],
+  #main [data-framer-name="Hero"] [data-framer-name="Top"],
+  #main [data-framer-name="Hero"] [data-framer-name="Headline"],
+  #main [data-framer-name="Hero"] .framer-gcxn0w,
+  #main [data-framer-name="Hero"] .framer-uqyp96,
+  #main [data-framer-name="Hero"] .framer-iaixja,
+  #main [data-framer-name="Hero"] .framer-1fmike7,
+  #main [data-framer-name="Hero"] .framer-5ogw63-container {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
     width: 100% !important;
-    max-width: calc(100vw - 32px) !important;
-    margin-inline: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  #main [data-framer-name="Headline"] h1.framer-text,
+  #main [data-framer-name="Top"] h1.framer-text,
+  #main [data-framer-name="Hero"] h1.framer-text {
+    font-size: clamp(1.75rem, 8.5vw, 3.2rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.02em !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  #main [data-framer-name="Hero"] h1.framer-text + h1.framer-text {
+    font-size: clamp(1.9rem, 9.5vw, 3.6rem) !important;
+  }
+
+  /* Framer nests desktop-sized spans inside headings — force inherit */
+  #main h1.framer-text span,
+  #main h1.framer-text em,
+  #main h1.framer-text .framer-text,
+  #main h2.framer-text span,
+  #main h2.framer-text em,
+  #main h2.framer-text .framer-text,
+  #main h3.framer-text span,
+  #main h3.framer-text em,
+  #main h3.framer-text .framer-text {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    max-width: 100% !important;
+  }
+
+  #main [data-framer-name="Headline"] p.framer-text,
+  #main [data-framer-name="Top"] p.framer-text {
+    font-size: clamp(1.35rem, 6vw, 2.2rem) !important;
+    line-height: 1.05 !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* ── 4. Quote band ── */
+  #main .framer-9wdoet {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 24px var(--gutter) !important;
+    height: auto !important;
+    overflow: visible !important;
+    text-align: center !important;
+  }
+
+  #main .framer-9wdoet * {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  #main .framer-9wdoet .framer-text,
+  #main .framer-9wdoet span {
+    font-size: clamp(0.95rem, 4vw, 1.35rem) !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    letter-spacing: normal !important;
+  }
+
+  /* ── 5. Profile cards (Tu te reconnais) ── */
+  #main .framer-thi9ge {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 16px var(--gutter) !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #main .framer-thi9ge > .ssr-variant,
+  #main .framer-thi9ge > .framer-7b0d7d,
+  #main .framer-thi9ge > .framer-16g8ail {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #main .framer-thi9ge .framer-1xk1r23,
+  #main .framer-thi9ge [data-framer-name="List"],
+  #main .framer-thi9ge [data-framer-name="Content"],
+  #main .framer-thi9ge [data-framer-name="Feature"],
+  #main .framer-thi9ge .framer-7b0d7d > *,
+  #main .framer-thi9ge .framer-16g8ail > * {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  #main .framer-thi9ge [data-framer-name="Feature"] p,
+  #main .framer-thi9ge [data-framer-name="Feature"] .framer-text,
+  #main .framer-thi9ge [data-framer-name="List"] p,
+  #main .framer-thi9ge [data-framer-name="List"] .framer-text {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+  }
+
+  #main .framer-thi9ge .framer-1xk1r23 > p.framer-text {
+    font-size: clamp(1.35rem, 6vw, 2.2rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  #main .framer-thi9ge a[data-framer-name="Button"],
+  #main .framer-thi9ge .framer-PcQVM {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 16px !important;
+    display: flex !important;
+  }
+
+  /* ── 6. All major sections — padding + overflow reset ── */
+  #main [data-framer-name="Rooms"],
+  #main [data-framer-name="Timetable"],
+  #main [data-framer-name="Pricing"],
+  #main [data-framer-name="Gallery"],
+  #main [data-framer-name="CTA"],
+  #main .framer-xh47sf,
+  #main .framer-gxmibw,
+  #main .framer-1sf9uvp,
+  #main .framer-cmem87,
+  #main .framer-sgtabz,
+  #main .framer-31cfym-container,
+  #main .framer-10e9rh-container {
+    padding-left: var(--gutter) !important;
+    padding-right: var(--gutter) !important;
+    box-sizing: border-box !important;
+    overflow-x: clip !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #main [data-framer-name="Hero"] {
+    overflow-x: clip !important;
+  }
+
+  #main [data-framer-name="Timetable"] [data-framer-name="Headline"],
+  #main [data-framer-name="Timetable"] .framer-i3p4ta {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  #main .framer-sgtabz [data-framer-name="Headline"] p.framer-text,
+  #main [data-framer-name="CTA"] [data-framer-name="Headline"] p.framer-text,
+  #main .framer-sgtabz [data-framer-name="Text"] p.framer-text,
+  #main [data-framer-name="CTA"] [data-framer-name="Text"] p.framer-text {
+    font-size: clamp(1.2rem, 5vw, 2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Reset absolute children inside sections */
+  #main [data-framer-name="Rooms"] *,
+  #main [data-framer-name="Timetable"] *,
+  #main [data-framer-name="Pricing"] *,
+  #main [data-framer-name="Gallery"] *,
+  #main [data-framer-name="CTA"] *,
+  #main .framer-31cfym-container *,
+  #main .framer-10e9rh-container * {
+    max-width: 100% !important;
+  }
+
+  #main [data-framer-name="Rooms"] [data-framer-name="Content"],
+  #main [data-framer-name="Rooms"] [data-framer-name="Card"],
+  #main [data-framer-name="Timetable"] [data-framer-name="Date"],
+  #main [data-framer-name="Timetable"] [data-framer-name="Content"],
+  #main [data-framer-name="Timetable"] [data-framer-name="Card"],
+  #main .framer-110nzqo,
+  #main .framer-1a5imib-container,
+  #main .framer-l4ura1,
+  #main .framer-1y99ram,
+  #main .framer-1izj0vc {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  #main a[data-framer-name="Button"] p,
-  #main a[data-framer-name="Button"] .framer-text,
-  #main .framer-PcQVM p {
+  /* ── 7. Section CTA buttons (NOT nav) ── */
+  #main a[data-framer-name="Button"]:not(nav a),
+  #main .framer-PcQVM:not(nav .framer-PcQVM) {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+  }
+
+  #main a[data-framer-name="Button"]:not(nav a) p,
+  #main a[data-framer-name="Button"]:not(nav a) .framer-text,
+  #main .framer-PcQVM:not(nav .framer-PcQVM) p {
     font-size: clamp(0.78rem, 3.2vw, 0.95rem) !important;
     white-space: normal !important;
-    text-align: center;
+    text-align: center !important;
   }
 
-  /* Content blocks */
-  #main [data-framer-name="Content"],
-  #main [data-framer-name="Left"],
-  #main [data-framer-name="List"],
-  #main .framer-1jt51hs,
-  #main .framer-uwvic7,
-  #main .framer-15jqjqf {
+  /* ── 8. FAQ section ── */
+  #main [data-framer-name="Phone"],
+  #main .framer-10e9rh-container {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    height: auto !important;
     width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-inline: var(--gutter) !important;
+    overflow: visible !important;
   }
 
-  #main .framer-l4ura1,
-  #main .framer-1y99ram,
-  #main .framer-1mcpg33,
-  #main .framer-v5lqoa,
-  #main .framer-fie8i5,
-  #main .framer-1ns0lwq,
-  #main .framer-tbkiw4,
-  #main .framer-1atdwbo,
-  #main [data-framer-name="Card 01"],
-  #main [data-framer-name="Mobile 01"] {
+  #main [data-framer-name="Phone"] [data-framer-name="Wrap"],
+  #main [data-framer-name="Phone"] [data-framer-name="Content"],
+  #main [data-framer-name="Phone"] [data-framer-name="Card"] {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
+  /* FAQ accordion pills stay compact */
+  #main [data-framer-name="Phone"] [data-framer-name="Medium Pill"],
+  #main [data-framer-name="Phone"] .framer-S5g6M {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ── 9. Typography ── */
+  #main h2.framer-text {
+    font-size: clamp(1.5rem, 6.5vw, 3rem) !important;
+    line-height: 1.05 !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  #main h3.framer-text {
+    font-size: clamp(1.2rem, 5vw, 2.2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  #main h4.framer-text {
+    font-size: clamp(0.95rem, 4vw, 1.6rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  #main p.framer-text,
+  #main .framer-text {
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  #main [data-framer-name="Pricing"] p.framer-text:first-of-type {
+    font-size: clamp(2rem, 12vw, 5rem) !important;
+    line-height: 1 !important;
+  }
+
+  /* ── 10. Media ── */
   #main video {
     width: 100% !important;
     max-width: 100% !important;
@@ -561,34 +441,28 @@ iframe {
     object-fit: cover;
   }
 
-  #main .framer-thi9ge .framer-text {
-    font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+  #main [data-framer-name="Gallery"],
+  #main [data-framer-name^="Image"] {
+    overflow: hidden !important;
   }
 }
 
 /* ─── Small phones (≤374px) ─── */
 @media (max-width: 374.98px) {
+  :root {
+    --gutter: 12px;
+  }
+
   #main [data-framer-name="Hero"] h1.framer-text {
-    font-size: clamp(1.75rem, 8.5vw, 2.4rem) !important;
+    font-size: clamp(1.65rem, 8.5vw, 2.2rem) !important;
   }
 
   #main h2.framer-text {
-    font-size: clamp(1.35rem, 6vw, 2rem) !important;
+    font-size: clamp(1.3rem, 6vw, 1.9rem) !important;
   }
 
   #main nav.framer-s9oXE {
-    padding: 10px 8px !important;
-  }
-
-  #main nav.framer-s9oXE a,
-  #main nav.framer-s9oXE p,
-  #main nav.framer-s9oXE .framer-text {
-    font-size: 0.62rem !important;
-  }
-
-  #main .framer-gxmibw {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding: 10px 10px !important;
   }
 }
 
@@ -627,10 +501,6 @@ iframe {
   #main [data-framer-name="Gallery"] {
     overflow: hidden !important;
   }
-
-  #main .framer-jv0o {
-    width: 100% !important;
-  }
 }
 
 /* ─── Desktop (≥1200px) ─── */
@@ -653,12 +523,7 @@ iframe {
 /* ─── Landscape mobile ─── */
 @media (max-width: 809.98px) and (orientation: landscape) {
   #main [data-framer-name="Hero"] h1.framer-text {
-    font-size: clamp(1.5rem, 6vh, 2.5rem) !important;
-  }
-
-  #main nav.framer-s9oXE {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+    font-size: clamp(1.4rem, 6vh, 2.2rem) !important;
   }
 }
 
