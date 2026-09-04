@@ -1,52 +1,116 @@
 (function () {
-  var MOBILE_MAX = 809.98;
-  var TARGET_TOP = 8;
+  "use strict";
 
-  function fixMobileLayout() {
-    if (window.innerWidth > MOBILE_MAX) {
-      document.documentElement.style.removeProperty("--mobile-layout-offset");
+  var MOBILE_MAX = 809.98;
+
+  function isMobile() {
+    return window.innerWidth <= MOBILE_MAX;
+  }
+
+  function getLanding() {
+    return document.querySelector('#main [data-framer-name="Landing 05"]');
+  }
+
+  function getFlowBlocks(landing) {
+    var blocks = [];
+
+    for (var i = 0; i < landing.children.length; i++) {
+      var child = landing.children[i];
+
+      if (child.classList.contains("ssr-variant")) {
+        for (var j = 0; j < child.children.length; j++) {
+          blocks.push(child.children[j]);
+        }
+      } else {
+        blocks.push(child);
+      }
+    }
+
+    return blocks;
+  }
+
+  function resetInlineLayout(el) {
+    el.style.removeProperty("height");
+    el.style.removeProperty("min-height");
+    el.style.removeProperty("max-height");
+    el.style.removeProperty("top");
+    el.style.removeProperty("left");
+    el.style.removeProperty("transform");
+  }
+
+  function compactMobileLayout() {
+    var landing = getLanding();
+    if (!landing) return;
+
+    if (!isMobile()) {
+      landing.style.removeProperty("height");
+      landing.style.removeProperty("min-height");
       return;
     }
 
-    var nav = document.querySelector("#main .framer-vrf80x-container");
-    if (!nav) return;
+    resetInlineLayout(landing);
 
-    var currentOffset =
-      parseFloat(
-        getComputedStyle(document.documentElement).getPropertyValue(
-          "--mobile-layout-offset",
-        ),
-      ) || 782;
+    var blocks = getFlowBlocks(landing);
+    var maxBottom = 0;
 
-    var navTop = nav.getBoundingClientRect().top;
-
-    if (navTop < -5) {
-      currentOffset = Math.ceil(currentOffset + Math.abs(navTop));
-    } else if (navTop > TARGET_TOP + 2) {
-      currentOffset = Math.max(0, Math.round(currentOffset - (navTop - TARGET_TOP)));
+    for (var i = 0; i < blocks.length; i++) {
+      resetInlineLayout(blocks[i]);
     }
 
-    document.documentElement.style.setProperty(
-      "--mobile-layout-offset",
-      currentOffset + "px",
-    );
+    // Force reflow so flex layout settles before measuring.
+    void landing.offsetHeight;
+
+    for (var k = 0; k < blocks.length; k++) {
+      var rect = blocks[k].getBoundingClientRect();
+      if (rect.height < 4) continue;
+      maxBottom = Math.max(maxBottom, rect.bottom + window.scrollY);
+    }
+
+    if (maxBottom > 0) {
+      var pageHeight = Math.ceil(maxBottom + 24);
+      landing.style.height = pageHeight + "px";
+      landing.style.minHeight = pageHeight + "px";
+
+      var root = document.querySelector("[data-framer-root]");
+      if (root) {
+        root.style.height = "auto";
+        root.style.minHeight = pageHeight + "px";
+      }
+    }
   }
 
-  function runFixLoop() {
-    fixMobileLayout();
-    window.setTimeout(fixMobileLayout, 300);
-    window.setTimeout(fixMobileLayout, 900);
-    window.setTimeout(fixMobileLayout, 1800);
-    window.setTimeout(fixMobileLayout, 3500);
+  function scheduleCompact() {
+    compactMobileLayout();
+    window.setTimeout(compactMobileLayout, 100);
+    window.setTimeout(compactMobileLayout, 400);
+    window.setTimeout(compactMobileLayout, 1000);
+    window.setTimeout(compactMobileLayout, 2500);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", runFixLoop);
+    document.addEventListener("DOMContentLoaded", scheduleCompact);
   } else {
-    runFixLoop();
+    scheduleCompact();
   }
 
-  window.addEventListener("resize", fixMobileLayout);
-  window.addEventListener("load", runFixLoop);
-  document.addEventListener("framer:pageview", fixMobileLayout);
+  window.addEventListener("load", scheduleCompact);
+  window.addEventListener("resize", compactMobileLayout);
+  document.addEventListener("framer:pageview", scheduleCompact);
+
+  if ("ResizeObserver" in window) {
+    var observer = new ResizeObserver(function () {
+      if (isMobile()) compactMobileLayout();
+    });
+
+    function observeLanding() {
+      var landing = getLanding();
+      if (landing) observer.observe(landing);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", observeLanding);
+    } else {
+      observeLanding();
+    }
+  }
 })();

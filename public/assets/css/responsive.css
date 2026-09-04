@@ -33,37 +33,168 @@ iframe {
 
 /* ─── Mobile (≤809px) ─── */
 @media (max-width: 809.98px) {
-  :root {
-    --mobile-layout-offset: 782px;
-  }
-
   [data-framer-root].framer-zjmsU,
   [data-framer-root].framer-zjmsU.framer-72rtr7,
   [data-framer-root].framer-zjmsU.framer-6y9891 {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    height: auto !important;
+    min-height: 100vh !important;
   }
 
-  /* Fix hero + nav positioned off-screen in Framer export */
-  #main .framer-vrf80x-container,
-  #main [data-framer-name="Hero"],
-  #main .framer-3lwy2 {
-    transform: translateY(var(--mobile-layout-offset, 782px)) !important;
+  /* Convert absolute desktop canvas into a vertical document flow */
+  #main .framer-1htuy4k,
+  #main [data-framer-name="Landing 05"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    gap: 0 !important;
   }
 
-  #main .framer-vrf80x-container {
+  /* SSR breakpoint wrappers become transparent to flex layout */
+  #main [data-framer-name="Landing 05"] > .ssr-variant {
+    display: contents !important;
+  }
+
+  /* Reset every top-level block to normal flow */
+  #main [data-framer-name="Landing 05"] > *,
+  #main [data-framer-name="Landing 05"] > .ssr-variant > * {
     position: relative !important;
-    z-index: 50 !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    translate: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Navigation — sticky at top */
+  #main .framer-vrf80x-container {
+    order: -100 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 200 !important;
     width: calc(100% - 24px) !important;
     max-width: calc(100vw - 24px) !important;
-    margin-inline: auto !important;
+    margin: 8px auto 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Hero section */
+  #main [data-framer-name="Hero"],
+  #main .framer-3lwy2 {
+    order: -90 !important;
+    min-height: auto !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
   }
 
   #main .framer-9wdoet {
-    transform: translateY(calc(var(--mobile-layout-offset, 782px) - 40px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 28px 16px !important;
+    min-height: 180px !important;
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    text-align: center !important;
   }
 
+  #main .framer-9wdoet * {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  #main .framer-thi9ge {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 28px !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 24px 16px !important;
+  }
+
+  #main .framer-thi9ge > .ssr-variant,
+  #main .framer-thi9ge > .framer-7b0d7d,
+  #main .framer-thi9ge > .framer-16g8ail {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #main .framer-thi9ge .framer-1xk1r23,
+  #main .framer-thi9ge [data-framer-name="List"],
+  #main .framer-thi9ge [data-framer-name="Content"],
+  #main .framer-thi9ge [data-framer-name="Left"],
+  #main .framer-thi9ge [data-framer-name="Card 01"],
+  #main .framer-thi9ge [data-framer-name="Mobile 01"],
+  #main .framer-thi9ge .framer-7qfo79,
+  #main .framer-thi9ge .framer-16nm2hh-container,
+  #main .framer-thi9ge .framer-7b0d7d > *,
+  #main .framer-thi9ge .framer-16g8ail > * {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* FAQ block — was absolutely positioned in desktop export */
+  #main [data-framer-name="Phone"],
+  #main .framer-10e9rh-container,
+  #main .framer-dqvjwx {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    height: auto !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  #main [data-framer-name="Phone"] [data-framer-name="Wrap"],
+  #main [data-framer-name="Phone"] [data-framer-name="Content"],
+  #main [data-framer-name="Phone"] [data-framer-name="Card"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  /* Section containers */
   #main .framer-zjmsU .framer-1htuy4k,
   #main .framer-zjmsU .framer-xh47sf,
   #main .framer-zjmsU .framer-gxmibw,
@@ -76,7 +207,9 @@ iframe {
   #main .framer-zjmsU .framer-jv0o,
   #main .framer-zjmsU .framer-gcxn0w,
   #main .framer-zjmsU .framer-1f1k1i5,
-  #main .framer-zjmsU .framer-10na8b8-container {
+  #main .framer-zjmsU .framer-10na8b8-container,
+  #main .framer-zjmsU .framer-cmem87,
+  #main .framer-zjmsU .framer-sgtabz {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -97,7 +230,8 @@ iframe {
   #main [data-framer-name="Pricing"],
   #main [data-framer-name="Rooms"],
   #main [data-framer-name="Timetable"],
-  #main [data-framer-name="Gallery"] {
+  #main [data-framer-name="Gallery"],
+  #main [data-framer-name="CTA"] {
     overflow-x: clip !important;
   }
 
@@ -138,7 +272,7 @@ iframe {
     line-height: 1.15 !important;
   }
 
-  /* Body copy — keep readable */
+  /* Body copy */
   #main [data-framer-name="Bottom"] p.framer-text,
   #main [data-framer-name="Content"] p.framer-text,
   #main [data-framer-name="List"] p.framer-text,
@@ -270,13 +404,6 @@ iframe {
     object-fit: cover;
   }
 
-  /* Quote animation section */
-  #main .framer-thi9ge {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-
   #main .framer-thi9ge .framer-text {
     font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
   }
@@ -368,10 +495,6 @@ iframe {
 
 /* ─── Landscape mobile ─── */
 @media (max-width: 809.98px) and (orientation: landscape) {
-  :root {
-    --mobile-layout-offset: 620px;
-  }
-
   #main [data-framer-name="Hero"] h1.framer-text {
     font-size: clamp(1.5rem, 6vh, 2.5rem) !important;
   }
