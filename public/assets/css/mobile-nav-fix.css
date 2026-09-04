@@ -230,4 +230,97 @@
   .framer-58xUY .framer-1m4rk1n {
     gap: 14px !important;
   }
+
+  /* Citation investisseurs — texte trop grand / coupé sur mobile */
+  .framer-9wdoet {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 20px 16px !important;
+    box-sizing: border-box !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .framer-9wdoet .framer-dqvjwx {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  .framer-9wdoet .framer-isdt2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    padding: 0 4px !important;
+  }
+
+  /* Masquer l'animation lettre-par-lettre et afficher le texte complet */
+  .framer-9wdoet p.framer-text:first-of-type {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .framer-9wdoet p.framer-text:first-of-type * {
+    display: none !important;
+  }
+
+  .framer-9wdoet p.framer-text:first-of-type::after {
+    content: "\"Les investisseurs intelligents n'attendent pas le bon moment. Ils construisent pendant que les autres attendent.\"";
+    display: block;
+    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: rgb(19, 21, 23) !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    padding: 0 6px !important;
+  }
+
+  .framer-9wdoet p.framer-text + p.framer-text {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    height: auto !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .framer-9wdoet p.framer-text + p.framer-text * {
+    display: none !important;
+  }
+
+  .framer-9wdoet p.framer-text + p.framer-text::after {
+    content: '— Imène Reign · Dubaï';
+    display: block;
+    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: rgb(19, 21, 23) !important;
+    text-align: center !important;
+  }
+
+  .framer-9wdoet .framer-text[style*="--framer-font-size"] {
+    --framer-font-size: 15px !important;
+  }
 }
