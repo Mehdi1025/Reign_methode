@@ -38,6 +38,40 @@
     el.style.removeProperty("transform");
   }
 
+  function fixWideElements() {
+    if (!isMobile()) return;
+
+    var viewportMax = window.innerWidth - 32;
+    var wideSelectors = [
+      ".framer-110nzqo",
+      ".framer-1a5imib-container",
+      ".framer-i3p4ta",
+      ".framer-3ae0jh",
+      ".framer-1izj0vc",
+      '[data-framer-name="Date"]',
+      ".framer-thi9ge .framer-7b0d7d",
+      ".framer-thi9ge .framer-16g8ail",
+      '[data-framer-name="Content"]',
+      '[data-framer-name="Card"]',
+      'a[data-framer-name="Button"]',
+      ".framer-PcQVM",
+      ".framer-cF4iG",
+    ];
+
+    for (var s = 0; s < wideSelectors.length; s++) {
+      var nodes = document.querySelectorAll("#main " + wideSelectors[s]);
+      for (var n = 0; n < nodes.length; n++) {
+        var el = nodes[n];
+        var rect = el.getBoundingClientRect();
+        if (rect.width > viewportMax || rect.right > window.innerWidth) {
+          el.style.setProperty("width", "100%", "important");
+          el.style.setProperty("max-width", viewportMax + "px", "important");
+          el.style.setProperty("box-sizing", "border-box", "important");
+        }
+      }
+    }
+  }
+
   function compactMobileLayout() {
     var landing = getLanding();
     if (!landing) return;
@@ -48,6 +82,7 @@
       return;
     }
 
+    fixWideElements();
     resetInlineLayout(landing);
 
     var blocks = getFlowBlocks(landing);

@@ -171,6 +171,154 @@ iframe {
     height: auto !important;
   }
 
+  /* Profile cards — fit viewport, no clipping */
+  #main .framer-thi9ge .framer-7b0d7d,
+  #main .framer-thi9ge .framer-16g8ail {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  #main .framer-thi9ge [data-framer-name="Content"],
+  #main .framer-thi9ge [data-framer-name="List"],
+  #main .framer-thi9ge [data-framer-name="Feature"],
+  #main .framer-thi9ge [data-framer-name="Card 01"],
+  #main .framer-thi9ge [data-framer-name="Mobile 01"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  #main .framer-thi9ge [data-framer-name="Feature"] p,
+  #main .framer-thi9ge [data-framer-name="Feature"] .framer-text,
+  #main .framer-thi9ge [data-framer-name="List"] p,
+  #main .framer-thi9ge [data-framer-name="List"] .framer-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  #main .framer-thi9ge a[data-framer-name="Button"],
+  #main .framer-thi9ge .framer-PcQVM,
+  #main .framer-thi9ge [data-framer-name="Variant 1"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+
+  #main .framer-thi9ge svg {
+    max-width: 100% !important;
+  }
+
+  #main .framer-thi9ge [data-framer-name="Suffix Icon"],
+  #main [data-framer-name="Feature"] [data-framer-name="Suffix Icon"] {
+    width: auto !important;
+    max-width: 24px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* FAQ accordion cards */
+  #main [data-framer-name="Phone"],
+  #main .framer-10e9rh-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  #main [data-framer-name="Phone"] [data-framer-name="Content"],
+  #main [data-framer-name="Phone"] [data-framer-name="Wrap"],
+  #main [data-framer-name="Phone"] [data-framer-name="Card"],
+  #main [data-framer-name="Phone"] [data-framer-name="Medium Pill"] {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Timetable / 5 modules section */
+  #main [data-framer-name="Timetable"],
+  #main .framer-gxmibw {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  #main [data-framer-name="Timetable"] > *,
+  #main .framer-gxmibw > *,
+  #main [data-framer-name="Timetable"] .ssr-variant > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+
+  #main [data-framer-name="Timetable"] [data-framer-name="Date"],
+  #main .framer-110nzqo,
+  #main .framer-1a5imib-container,
+  #main .framer-i3p4ta,
+  #main .framer-3ae0jh,
+  #main .framer-1izj0vc,
+  #main [data-framer-name="Timetable"] [data-framer-name="Content"],
+  #main [data-framer-name="Timetable"] [data-framer-name="Card"],
+  #main .framer-l4ura1,
+  #main .framer-1y99ram {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #main [data-framer-name="Timetable"] a[data-framer-name="Button"],
+  #main [data-framer-name="Timetable"] .framer-PcQVM,
+  #main [data-framer-name="Timetable"] .framer-cF4iG,
+  #main .framer-1a5imib-container a {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+  }
+
+  #main [data-framer-name="Timetable"] [data-framer-name="Date"],
+  #main .framer-110nzqo {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Rooms + other card sections */
+  #main [data-framer-name="Rooms"],
+  #main .framer-xh47sf {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  #main [data-framer-name="Rooms"] [data-framer-name="Content"],
+  #main [data-framer-name="Rooms"] [data-framer-name="Card"],
+  #main [data-framer-name="Rooms"] [data-framer-name="Card 01"],
+  #main [data-framer-name="Rooms"] [data-framer-name="Card 02"],
+  #main [data-framer-name="Rooms"] [data-framer-name="Card 03"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   /* FAQ block — was absolutely positioned in desktop export */
   #main [data-framer-name="Phone"],
   #main .framer-10e9rh-container,
@@ -220,8 +368,8 @@ iframe {
   }
 
   #main .framer-zjmsU .framer-gxmibw {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   #main .framer-zjmsU .framer-xh47sf,
@@ -362,6 +510,15 @@ iframe {
   }
 
   /* CTA buttons */
+  #main a[data-framer-name="Button"],
+  #main .framer-PcQVM,
+  #main .framer-cF4iG[data-framer-name="Variant 1"] {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+  }
+
   #main a[data-framer-name="Button"] p,
   #main a[data-framer-name="Button"] .framer-text,
   #main .framer-PcQVM p {
