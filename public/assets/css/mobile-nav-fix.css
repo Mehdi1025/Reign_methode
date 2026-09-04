@@ -191,4 +191,43 @@
     max-width: 100% !important;
     height: auto !important;
   }
+
+  /* Cartes bonus — réduire la hauteur sur mobile */
+  .framer-58xUY .framer-w5eerz,
+  .framer-58xUY .framer-11d04dy,
+  .framer-58xUY .framer-d6lhva,
+  .framer-58xUY .framer-1p63avm,
+  .framer-zjmsU .framer-1u4s0d0 {
+    height: 390px !important;
+    min-height: 390px !important;
+    max-height: 390px !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .framer-58xUY .framer-1w3kvej,
+  .framer-58xUY .framer-1w3h8hb,
+  .framer-58xUY .framer-1xi9csh,
+  .framer-58xUY .framer-16irkna {
+    gap: 6px !important;
+  }
+
+  .framer-58xUY .framer-twyy2w,
+  .framer-58xUY .framer-dii7hc,
+  .framer-58xUY .framer-1hx01y9,
+  .framer-58xUY .framer-1vljrjn {
+    top: 78px !important;
+  }
+
+  .framer-58xUY .framer-hdcrxv-container,
+  .framer-58xUY .framer-15m0oj0-container,
+  .framer-58xUY .framer-39xhv2-container,
+  .framer-58xUY .framer-p29ujd-container {
+    transform: scale(0.88) !important;
+    transform-origin: center top !important;
+  }
+
+  .framer-58xUY .framer-1m4rk1n {
+    gap: 14px !important;
+  }
 }
