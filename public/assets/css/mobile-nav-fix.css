@@ -1,3 +1,9 @@
+/* Couleur violet foncé globale */
+:root,
+body {
+  --token-17855a8d-5e20-43de-94f2-ccf4b9feb401: #260029 !important;
+}
+
 /* Fix navbar mobile décalée — Framer utilise width:390px fixe */
 @media (max-width: 809.98px) {
   html,
@@ -322,5 +328,57 @@
 
   .framer-9wdoet .framer-text[style*="--framer-font-size"] {
     --framer-font-size: 15px !important;
+  }
+
+  /* Hero — "The reign method" sur 2 lignes, aligné à gauche sur mobile */
+  .framer-uqyp96 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  .framer-26v7ls {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: flex-start !important;
+    text-align: left !important;
+  }
+
+  .framer-26v7ls h1.framer-text {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  .framer-26v7ls h1.framer-text::before,
+  .framer-26v7ls h1.framer-text::after {
+    display: block;
+    font-family: "Anton SC", "Anton SC Placeholder", sans-serif !important;
+    font-size: clamp(50px, 13vw, 68px) !important;
+    --framer-font-size: clamp(50px, 13vw, 68px) !important;
+    line-height: 0.98 !important;
+    text-transform: uppercase !important;
+    color: rgb(19, 21, 23) !important;
+    letter-spacing: -0.01em !important;
+    text-align: left !important;
+  }
+
+  .framer-26v7ls h1.framer-text::before {
+    content: "The reign";
+  }
+
+  .framer-26v7ls h1.framer-text::after {
+    content: "method";
   }
 }
