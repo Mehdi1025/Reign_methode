@@ -1,7 +1,27 @@
 /* Couleur violet foncé globale */
 :root,
-body {
+body,
+[data-framer-root] {
   --token-17855a8d-5e20-43de-94f2-ccf4b9feb401: #260029 !important;
+  --token-d367fdb1-4c62-4944-8bbb-c8ced73e3ff6: #260029 !important;
+}
+
+a.framer-cF4iG,
+a.framer-S5g6M,
+.framer-bsxpif,
+.framer-pfjzt8,
+.framer-1rq8edr,
+.framer-exz7h0 {
+  background-color: #260029 !important;
+  border-color: #260029 !important;
+  --border-color: #260029 !important;
+}
+
+.framer-pfjzt8,
+.framer-1ua7w7s,
+.framer-sgtabz .framer-8ttr7l {
+  --border-color: #260029 !important;
+  border-color: #260029 !important;
 }
 
 /* Fix navbar mobile décalée — Framer utilise width:390px fixe */
