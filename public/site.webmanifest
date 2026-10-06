@@ -1,0 +1,22 @@
+{
+  "name": "The Reign Method — Imène Reign",
+  "short_name": "The Reign Method",
+  "description": "Formation mindset, business digital et investissement immobilier à Dubaï. 5 modules, accès à vie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#260029",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/assets/images/image-2ea65ec3.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/image-1b8d14bc.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
