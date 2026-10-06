@@ -123,9 +123,10 @@ a.framer-S5g6M,
     max-width: 100% !important;
     min-height: 50px !important;
     height: auto !important;
-    padding: 12px 48px 12px 16px !important;
+    padding: 12px 48px !important;
     box-sizing: border-box !important;
     align-items: center !important;
+    justify-content: center !important;
     overflow: hidden !important;
   }
 
@@ -134,9 +135,10 @@ a.framer-S5g6M,
     word-break: break-word !important;
     overflow-wrap: anywhere !important;
     flex: 1 1 auto !important;
-    width: auto !important;
+    width: 100% !important;
     min-width: 0 !important;
-    max-width: calc(100% - 44px) !important;
+    max-width: 100% !important;
+    text-align: center !important;
   }
 
   a.framer-cF4iG .framer-1izj0vc .framer-text {
@@ -145,6 +147,20 @@ a.framer-S5g6M,
     overflow-wrap: anywhere !important;
     line-height: 1.35 !important;
     font-size: 13px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Navbar — "Accédez au programme" */
+  a.framer-S5g6M {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  a.framer-S5g6M .framer-text,
+  a.framer-S5g6M p.framer-text {
+    text-align: center !important;
+    width: 100% !important;
   }
 
   a.framer-cF4iG .framer-7qfo79 {
@@ -162,6 +178,81 @@ a.framer-S5g6M,
   a.framer-cF4iG .framer-16nm2hh-container {
     right: 8px !important;
     left: auto !important;
+  }
+
+  /* Boutons paiement — même style que "Accéder au programme", texte sur 2 lignes */
+  .framer-pfjzt8 .framer-1rq8edr {
+    gap: 12px !important;
+  }
+
+  .framer-pfjzt8 .framer-1jitjtq-container,
+  .framer-pfjzt8 .framer-1hpehlg-container {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .framer-pfjzt8 a.framer-cF4iG.framer-xd0yy8 {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 52px !important;
+    padding: 10px 46px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    --border-color: #ffffff !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .framer-pfjzt8 a.framer-cF4iG .framer-1izj0vc {
+    position: relative !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .framer-pfjzt8 a.framer-cF4iG .framer-1izj0vc .framer-text {
+    color: #260029 !important;
+    --framer-text-color: #260029 !important;
+    font-size: 10.5px !important;
+    --framer-font-size: 10.5px !important;
+    font-weight: 500 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .framer-pfjzt8 a.framer-cF4iG .framer-7qfo79 {
+    position: absolute !important;
+    top: 50% !important;
+    right: 6px !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    background-color: #260029 !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+  }
+
+  .framer-pfjzt8 a.framer-cF4iG .framer-7qfo79 svg,
+  .framer-pfjzt8 a.framer-cF4iG .framer-7qfo79 svg * {
+    fill: #ffffff !important;
+    color: #ffffff !important;
   }
 
   /* Section CTA — "Transformez votre ambition en réalité" */
@@ -232,13 +323,14 @@ a.framer-S5g6M,
     height: auto !important;
   }
 
-  /* Section bonus — centrage et largeur mobile */
+  /* Section modules (Timetable) + bonus — centrage et largeur mobile */
   .framer-gxmibw {
     width: 100% !important;
     max-width: 100% !important;
     padding: 24px 16px !important;
     box-sizing: border-box !important;
     align-items: stretch !important;
+    overflow: visible !important;
   }
 
   .framer-31cfym-container,
@@ -268,8 +360,72 @@ a.framer-S5g6M,
   .framer-gxmibw .framer-1f1k1i5 {
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 14px !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  /* Badge "+2H de vidéos + ebook" au-dessus du titre modules */
+  .framer-gxmibw .framer-110nzqo {
+    display: flex !important;
+    overflow: visible !important;
+    min-height: 54px !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .framer-gxmibw .framer-110nzqo [data-framer-component-type="RichTextContainer"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Titre "5 modules. Un système entier." — taille mobile */
+  .framer-gxmibw .framer-i3p4ta {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .framer-gxmibw .framer-i3p4ta h2.framer-text,
+  .framer-gxmibw .framer-i3p4ta h2.framer-text > span.framer-text {
+    font-size: clamp(30px, 8.5vw, 44px) !important;
+    --framer-font-size: clamp(30px, 8.5vw, 44px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .framer-gxmibw .framer-i3p4ta h2.framer-text em.framer-text {
+    font-size: clamp(26px, 7.5vw, 38px) !important;
+    --framer-font-size: clamp(26px, 7.5vw, 38px) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Description modules — texte blanc invisible sur fond blanc */
+  .framer-gxmibw .framer-3ae0jh {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .framer-gxmibw .framer-3ae0jh p.framer-text {
+    color: rgb(19, 21, 23) !important;
+    --framer-text-color: rgb(19, 21, 23) !important;
   }
 
   /* Cartes bonus — réduire la hauteur sur mobile */
