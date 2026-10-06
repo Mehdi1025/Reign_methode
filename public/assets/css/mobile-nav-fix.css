@@ -38,6 +38,20 @@ a.framer-S5g6M,
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden;
+    place-content: flex-start !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .framer-1htuy4k {
+    place-content: flex-start !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   .framer-vrf80x-container {
@@ -218,17 +232,61 @@ a.framer-S5g6M,
     height: auto !important;
   }
 
+  /* Section bonus — centrage et largeur mobile */
+  .framer-gxmibw {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 16px !important;
+    box-sizing: border-box !important;
+    align-items: stretch !important;
+  }
+
+  .framer-31cfym-container,
+  .framer-10na8b8-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .framer-gxmibw .framer-l4ura1,
+  .framer-gxmibw .framer-1f1k1i5,
+  .framer-gxmibw .framer-110nzqo,
+  .framer-gxmibw .framer-1mcpg33,
+  .framer-gxmibw .framer-1gquioj,
+  .framer-gxmibw .framer-1jvmusf,
+  .framer-gxmibw .framer-1bihg5b,
+  .framer-gxmibw .framer-q7d75,
+  .framer-gxmibw .framer-1og7mxj,
+  .framer-58xUY,
+  .framer-58xUY .framer-1m4rk1n {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .framer-gxmibw .framer-1f1k1i5 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
   /* Cartes bonus — réduire la hauteur sur mobile */
+  .framer-gxmibw .framer-1u4s0d0,
   .framer-58xUY .framer-w5eerz,
   .framer-58xUY .framer-11d04dy,
   .framer-58xUY .framer-d6lhva,
-  .framer-58xUY .framer-1p63avm,
-  .framer-zjmsU .framer-1u4s0d0 {
+  .framer-58xUY .framer-1p63avm {
+    width: 100% !important;
+    max-width: 100% !important;
     height: 390px !important;
     min-height: 390px !important;
     max-height: 390px !important;
+    margin: 0 auto !important;
     padding: 20px !important;
     box-sizing: border-box !important;
+    place-self: stretch !important;
   }
 
   .framer-58xUY .framer-1w3kvej,
@@ -257,29 +315,56 @@ a.framer-S5g6M,
     gap: 14px !important;
   }
 
-  /* Citation investisseurs — texte trop grand / coupé sur mobile */
+  /* Titre "Nos partenaires à Dubaï" — éviter coupure sur mobile */
+  .framer-1mway9h {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    text-align: center !important;
+  }
+
+  .framer-1mway9h [data-framer-component-type="RichTextContainer"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .framer-1mway9h .framer-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(24px, 6.8vw, 32px) !important;
+    --framer-font-size: clamp(24px, 6.8vw, 32px) !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+  }
+
+  /* Citation investisseurs — taille lisible + effet apparition lettre par lettre */
   .framer-9wdoet {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
     overflow: visible !important;
-    padding: 20px 16px !important;
+    padding: 28px 16px !important;
     box-sizing: border-box !important;
-    align-items: flex-start !important;
+    align-items: center !important;
+    justify-content: center !important;
     flex-direction: column !important;
   }
 
-  .framer-9wdoet .framer-dqvjwx {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-  }
-
+  .framer-9wdoet .framer-dqvjwx,
   .framer-9wdoet .framer-isdt2 {
     width: 100% !important;
     max-width: 100% !important;
@@ -292,62 +377,46 @@ a.framer-S5g6M,
     left: auto !important;
     right: auto !important;
     transform: none !important;
-    padding: 0 4px !important;
-  }
-
-  /* Masquer l'animation lettre-par-lettre et afficher le texte complet */
-  .framer-9wdoet p.framer-text:first-of-type {
-    font-size: 0 !important;
-    line-height: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-  }
-
-  .framer-9wdoet p.framer-text:first-of-type * {
-    display: none !important;
-  }
-
-  .framer-9wdoet p.framer-text:first-of-type::after {
-    content: "\"Les investisseurs intelligents n'attendent pas le bon moment. Ils construisent pendant que les autres attendent.\"";
-    display: block;
-    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif !important;
-    font-size: 15px !important;
-    line-height: 1.55 !important;
-    color: rgb(19, 21, 23) !important;
+    padding: 0 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     text-align: center !important;
+  }
+
+  .framer-9wdoet p.framer-text,
+  .framer-9wdoet p.framer-text .framer-text {
+    --framer-font-size: clamp(22px, 6.2vw, 28px) !important;
+    font-size: clamp(22px, 6.2vw, 28px) !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
     white-space: normal !important;
     word-break: break-word !important;
     overflow-wrap: break-word !important;
-    padding: 0 6px !important;
-  }
-
-  .framer-9wdoet p.framer-text + p.framer-text {
-    font-size: 0 !important;
-    line-height: 0 !important;
-    height: auto !important;
-    margin: 10px 0 0 !important;
-    padding: 0 !important;
-  }
-
-  .framer-9wdoet p.framer-text + p.framer-text * {
-    display: none !important;
-  }
-
-  .framer-9wdoet p.framer-text + p.framer-text::after {
-    content: '— Imène Reign · Dubaï';
-    display: block;
-    font-family: "Instrument Serif", "Instrument Serif Placeholder", serif !important;
-    font-size: 13px !important;
-    line-height: 1.4 !important;
     color: rgb(19, 21, 23) !important;
-    text-align: center !important;
   }
 
-  .framer-9wdoet .framer-text[style*="--framer-font-size"] {
-    --framer-font-size: 15px !important;
+  .framer-9wdoet p.framer-text + p.framer-text,
+  .framer-9wdoet p.framer-text + p.framer-text .framer-text {
+    --framer-font-size: clamp(18px, 5vw, 23px) !important;
+    font-size: clamp(18px, 5vw, 23px) !important;
+    margin-top: 14px !important;
+  }
+
+  .framer-9wdoet p.framer-text span[style*="nowrap"] {
+    white-space: nowrap !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+  }
+
+  .framer-9wdoet p.framer-text span span {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    will-change: transform, opacity, filter !important;
   }
 
   /* Hero — "The reign method" sur 2 lignes, aligné à gauche sur mobile */
@@ -400,5 +469,129 @@ a.framer-S5g6M,
 
   .framer-26v7ls h1.framer-text::after {
     content: "method";
+  }
+
+  /* Section "Tu te reconnais" — cartes checklist décalées (position absolute Framer) */
+  .framer-thi9ge {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 16px 32px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  .framer-1xk1r23 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .framer-7b0d7d,
+  .framer-16g8ail {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    flex: none !important;
+    margin: 0 !important;
+    padding: 20px 16px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    overflow: visible !important;
+  }
+
+  .framer-1onp2jh,
+  .framer-jhg9z1 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    order: 2 !important;
+  }
+
+  /* Titres en tête de carte (Framer les met en 2e dans le DOM) */
+  .framer-1bgykua,
+  .framer-21jm5w {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    order: 1 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .framer-1onp2jh,
+  .framer-jhg9z1 {
+    gap: 20px !important;
+  }
+
+  .framer-1023uqs {
+    width: 100% !important;
+    gap: 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .framer-177igoy,
+  .framer-hc7ndy,
+  .framer-1wyjcku,
+  .framer-8t6jig,
+  .framer-14hkr41,
+  .framer-1cfoa84,
+  .framer-180vf0q,
+  .framer-1bgykua,
+  .framer-21jm5w {
+    align-items: flex-start !important;
+    place-content: flex-start !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .framer-1tvv86i-container,
+  .framer-cg9vl3-container,
+  .framer-yjq4yq-container,
+  .framer-kb8fky-container,
+  .framer-16nabj4-container,
+  .framer-z7h3q5-container,
+  .framer-ggnu7z-container {
+    flex-shrink: 0 !important;
+    align-self: flex-start !important;
+    margin-top: 2px !important;
+  }
+
+  .framer-1k8pzyu,
+  .framer-1gucpcx,
+  .framer-vqdbe1,
+  .framer-l9il78,
+  .framer-19yimcg,
+  .framer-o1vnvv,
+  .framer-1oneh7r {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
   }
 }
