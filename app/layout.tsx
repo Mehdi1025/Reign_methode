@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
-const siteUrl = "https://imene-reign.framer.website";
+const siteUrl = "https://www.the-reign-method.com";
 
 export const viewport: Viewport = {
   themeColor: "#260029",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://imene-reign.framer.website/sitemap.xml
+Sitemap: https://www.the-reign-method.com/sitemap.xml
