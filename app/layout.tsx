@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "The Reign Method|MB By Reign",
+    default: "The Reign Method | Imene Reign",
     template: "%s | The Reign Method",
   },
   description:

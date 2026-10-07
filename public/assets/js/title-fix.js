@@ -1,5 +1,5 @@
 (function () {
-  var TITLE = "The Reign Method|MB By Reign";
+  var TITLE = "The Reign Method | Imene Reign";
 
   function applyTitle() {
     if (document.title !== TITLE) {
