@@ -9,9 +9,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default:
-      "The Reign Method | Formation Imène Reign — Mindset, Business & Immobilier Dubaï",
-    template: "%s | Imène Reign",
+    default: "The Reign Method|MB By Reign",
+    template: "%s | The Reign Method",
   },
   description:
     "La formation qui connecte mindset d'exception, business digital et investissement immobilier à Dubaï. 5 modules vidéo, bonus exclusifs, communauté privée — 297€, accès à vie.",
