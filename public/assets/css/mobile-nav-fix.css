@@ -515,6 +515,8 @@ a.framer-S5g6M,
     padding: 0 !important;
     overflow: hidden !important;
     background: transparent !important;
+    opacity: 1 !important;
+    transform: none !important;
     -webkit-mask: none !important;
     mask: none !important;
   }
@@ -527,6 +529,7 @@ a.framer-S5g6M,
     width: 100%;
     overflow: hidden;
     padding: 4px 0 12px;
+    -webkit-overflow-scrolling: touch;
     -webkit-mask-image: linear-gradient(
       90deg,
       transparent 0%,
@@ -548,9 +551,17 @@ a.framer-S5g6M,
     align-items: center;
     gap: 14px;
     width: max-content;
-    animation: partners-mobile-scroll 32s linear infinite;
+    min-width: 100%;
     will-change: transform;
     transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-animation: partners-mobile-scroll 32s linear infinite;
+    animation: partners-mobile-scroll 32s linear infinite;
+  }
+
+  .partners-mobile-track.is-js-scroll {
+    -webkit-animation: none !important;
+    animation: none !important;
   }
 
   .partners-mobile-item {
@@ -572,22 +583,34 @@ a.framer-S5g6M,
     user-select: none;
   }
 
+  @-webkit-keyframes partners-mobile-scroll {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(var(--partners-scroll-distance, -1840px), 0, 0);
+      transform: translate3d(var(--partners-scroll-distance, -1840px), 0, 0);
+    }
+  }
+
   @keyframes partners-mobile-scroll {
     0% {
       transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translate3d(-50%, 0, 0);
+      transform: translate3d(var(--partners-scroll-distance, -1840px), 0, 0);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .partners-mobile-track {
-      animation: none;
+      -webkit-animation: partners-mobile-scroll 48s linear infinite !important;
+      animation: partners-mobile-scroll 48s linear infinite !important;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       scroll-snap-type: x mandatory;
-      width: 100%;
+      width: max-content !important;
+      min-width: 100%;
       padding: 0 16px;
       box-sizing: border-box;
     }
